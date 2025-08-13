@@ -20,7 +20,7 @@ a{
 } */
  #navbar {
   display: flex;
-  justify-content: flex-end;  /* Pushes items to the right */
+  justify-content: flex-end;  
   background-color: #13477a;
   padding: 15px;
 }
@@ -28,7 +28,7 @@ a{
 #navbar a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;  /* Space between links */
+  margin-left: 20px;  
   font-weight: bold;
 }
 
@@ -36,3 +36,208 @@ a{
   text-decoration: underline;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+
+#navbar {
+  background: #004080;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#navbar a:hover {
+  background-color: #0066cc;
+}
+
+.hero {
+  background: url('assets/hero-background.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: blue;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #0066cc;
+}
+
+.hero .btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #004080;
+}
+
+.introduction {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.introduction h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #004080;
+}
+
+.features {
+  background: white;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 64, 128, 0.1);
+}
+
+.features h2 {
+  color: #004080;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.features ul li {
+  background: #e6f0ff;
+  margin: 8px 0;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border-left: 5px solid #004080;
+}
+
+
+.call-to-action {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+.call-to-action h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.call-to-action .btn {
+  background-color: white;
+  color: #004080;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action .btn:hover {
+  background-color: #cce0ff;
+}
+.blog-post {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.post-header {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 2rem;
+  color: #0056b3;
+  margin: 0;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.post-content h2 {
+  color: #007bff;
+  margin-top: 25px;
+  font-size: 1.4rem;
+}
+
+.post-content p {
+  color: #333;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.post-content ol {
+  padding-left: 20px;
+}
+
+.post-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.post-content ul li {
+  margin: 5px 0;
+}
+
+.post-content strong {
+  color: #0056b3;
+}
+
+.post-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
