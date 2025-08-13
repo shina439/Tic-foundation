@@ -2,15 +2,37 @@
     margin: 0;
     padding: 0;
 }
-#navbar {
-  background: #004aad;
-  padding: 10px;
+/* #navbar {
+  background-color: #2c3e50;
+  padding: 12px;
 }
 #navbar a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  margin-right: 15px;
+  margin-right: 20px;
+  font-weight: bold;
 }
 #navbar a:hover {
   text-decoration: underline;
 }
+a{
+    padding-right: ;
+} */
+ #navbar {
+  display: flex;
+  justify-content: flex-end;  /* Pushes items to the right */
+  background-color: #13477a;
+  padding: 15px;
+}
+
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;  /* Space between links */
+  font-weight: bold;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+}
+
