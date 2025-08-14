@@ -774,3 +774,11 @@ footer {
   text-decoration: none;
   cursor: pointer;
 }
+h2-text{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
+
+}
