@@ -1,51 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tic-web</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TIC Summit — Empowering Young Innovators</title>
+  <meta name="description" content="Cameroon's largest tech challenge for Secondary and High school students." />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    
-    <nav id="navbar">
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="stories.html">Success Stories</a>
-    <a href="blog.html">Blog</a>
-    <a href="events.html">Events</a>
-    <a href="volunteer.html">Volunteer</a>
-    <a href="gallery.html">Gallery</a>
-</nav>
-<body>
-  <header class="hero">
-    <h1>Welcome to TIC FOUNDATION</h1>
-    <p>Empowering communities through education and support.</p>
-    <a href="programs.html" class="btn">Explore Our Programs</a>
-  </header>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="brand">
+        <span class="brand__logo">TIC</span>
+        <span class="brand__text">Foundation</span>
+      </a>
 
-  <section class="introduction">
-    <h>About Us</h2>
-    <p>We are dedicated to providing resources and opportunities to those in need. Join us in making a difference.</p>
-  </section>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+        <!-- Menu icon -->
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
 
-  <section class="features">
-    <h2>Our Focus Areas</h2>
-    <ul>
-      <li>Education and Training</li>
-      <li>Community Support</li>
-      <li>Volunteer Opportunities</li>
-      <li>Events and Workshops</li>
-    </ul>
-  </section>
+      <div class="nav__links" id="navLinks" data-open="false">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/about" class="nav__link">About</a>
 
-  <section class="call-to-action">
-    <h2>Get Involved</h2>
-    <p>Whether you want to volunteer, donate, or participate, there’s a place for you at TIC FOUNDATION.</p>
-    <a href="volunteer.html" class="btn">Join Us</a>
-  </section>
+        <!-- Schedule dropdown -->
+        <div class="dropdown" id="scheduleDropdown">
+          <button class="nav__link dropdown__trigger" aria-expanded="false">
+            <span>Schedule</span>
+            <svg class="icon-sm" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="dropdown__menu" role="menu" aria-hidden="true">
+            <a href="/schedule" class="dropdown__item" role="menuitem">Program Timeline</a>
+            <a href="/schedule/past-events" class="dropdown__item" role="menuitem">Past Events</a>
+          </div>
+        </div>
+
+        <a href="/hall-of-fame" class="nav__link">Hall of Fame</a>
+        <a href="/blog" class="nav__link">Blog</a>
+        <a href="/contact" class="nav__link">Contact</a>
+
+        <a href="/signin" class="btn btn--primary nav__cta">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="section gradient-hero hero">
+      <div class="container grid hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            <span class="accent">Tic Foundation</span><br />
+            <span class="hero__title-main">Empowering Young Innovators</span>
+          </h1>
+          <p class="lead">Cameroon's largest tech challenge for Secondary and High school students</p>
+          <p class="sublead">
+            The summit provides a platform for these brilliant minds to connect with industry experts, gain valuable
+            mentorship, and win prizes for their innovative ideas.
+          </p>
+
+          <div class="actions">
+            <a href="#apply" class="btn btn--cyan btn--lg">Apply Now</a>
+            <a href="#donate" class="btn btn--outline-cyan btn--lg">Donate</a>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="media-card">
+            <img src="./assets/students.jpg" alt="TIC Summit 2022 - Students in computer lab" />
+            <div class="media-card__badge">TIC SUMMIT 2022</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         TRUST
+    ========================== -->
+    <section class="section bg--light">
+      <div class="container text-center">
+        <h2 class="h2">They Trust Us</h2>
+        <div class="logo-grid">
+          <div class="logo-item"><img src="/placeholder.svg?height=60&width=120" alt="Partner 1" /></div>
+          <div class="logo-item"><img src="/placeholder.svg?height=60&width=120" alt="Partner 2" /></div>
+          <div class="logo-item"><img src="/placeholder.svg?height=60&width=120" alt="Partner 3" /></div>
+          <div class="logo-item"><img src="/placeholder.svg?height=60&width=120" alt="Partner 4" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         RECAP
+    ========================== -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="h2">TIC SUMMIT 2025 RECAP</h2>
+          <p class="muted maxw-80 center">
+            The TIC summit 2023 edition was a great success. Over 500 volunteers and some staff not numerous outreaches
+            in the Centre, Littoral, West, North West and South West regions of the country. These outreaches got 1500
+            students pre-registering from the 26 different schools visited. After follow up sessions with the
+            pre-registered, the summit had 500 successful registrations. During the 3 days program, the participants had
+            trainings on Design thinking, Business model Canvas, UI UX designing, Tinker CAD, time management,
+            cybersecurity, branding and marketing, content creation and video editing. These trainings were held at
+            Gingko Fab labs and the High Tech printing center at Polytechnic Yaounde.
+          </p>
+        </div>
+
+        <div class="spacer-6"></div>
+
+        <img class="img-wide shadow-lg" src="/placeholder.svg?height=400&width=800"
+          alt="TIC Summit participants working" />
+      </div>
+    </section>
+
+    <!-- =========================
+         IMPACT STATS
+    ========================== -->
+    <section class="section bg--light">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="h2">TIC's Impact in 4 years</h2>
+        </div>
+
+        <div class="grid stats-grid">
+          <!-- Card 1 -->
+          <article class="card card--dark center">
+            <div class="icon-box">
+              <!-- Users icon -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 11c1.657 0 3-1.79 3-4s-1.343-4-3-4-3 1.79-3 4 1.343 4 3 4zM8 11c1.657 0 3-1.79 3-4S9.657 3 8 3 5 4.79 5 7s1.343 4 3 4zm0 2c-2.67 0-8 1.336-8 4v2h10v-2c0-1.657.672-3.157 1.757-4.33A10.64 10.64 0 0 0 8 13zm8 0c-.93 0-1.82.1-2.66.29A6.98 6.98 0 0 1 16 19v2h8v-2c0-2.664-5.33-4-8-4z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="stat">469+</div>
+              <p class="muted">
+                Cameroonian secondary school students inspired and empowered to pursue a career in tech and
+                entrepreneurship
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card card--dark center">
+            <div class="icon-box">
+              <!-- Award icon -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 15a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm-6 5v-3.5a10.97 10.97 0 0 0 6 1.5c2.14 0 4.14-.6 5.86-1.64L18 20l-3-1-3 2-3-2-3 1z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="stat">422+</div>
+              <p class="muted">
+                Teenagers trained and equipped with vital technical skills for the digital economy through our various
+                summits and programs
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card card--dark center">
+            <div class="icon-box">
+              <!-- DollarSign icon -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 1v22M17 5c0-1.657-2.239-3-5-3S7 3.343 7 5s2.239 3 5 3 5 1.343 5 3-2.239 3-5 3-5 1.343-5 3 2.239 3 5 3 5-1.343 5-3"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div>
+              <div class="stat">2M FCFA</div>
+              <p class="muted">In prize money and entrepreneurships</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card card--dark center">
+            <div class="icon-box">
+              <!-- Target icon -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-4a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="stat">15+</div>
+              <p class="muted">TIC clubs established in different schools across the country</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         WINNERS
+    ========================== -->
+    <section class="section gradient-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="h2 text-on-dark">TIC SUMMIT 2025 WINNERS</h2>
+        </div>
+
+        <div class="grid winners-grid">
+          <!-- Winner 1 -->
+          <article class="card card--dim">
+            <div class="ribbon ribbon--green">1st prize</div>
+            <h3 class="card__title">JEWISH AND FRIENDS</h3>
+            <p class="muted">
+              This team created a device that can recycle plastic together and use it to produce an external power
+              source connected to an external temperature produces maples on stirring.
+            </p>
+          </article>
+
+          <!-- Winner 2 -->
+          <article class="card card--dim">
+            <div class="ribbon ribbon--cyan">2nd prize</div>
+            <h3 class="card__title">TECH ECO-BUILDERS</h3>
+            <p class="muted">
+              What an amazing project, the project enabled proper waste segregation by handling all the longs found
+              in the environment and creating a reusable substance that can be used to gas bottles.
+            </p>
+          </article>
+
+          <!-- Winner 3 -->
+          <article class="card card--dim">
+            <div class="ribbon ribbon--yellow">3rd prize</div>
+            <h3 class="card__title">TANNOVA</h3>
+            <p class="muted">
+              Here is a platform that will help youths showcase and develop their talents after having series of
+              exercises taken from the website.
+            </p>
+          </article>
+        </div>
+
+        <div class="text-center">
+          <a href="#more-projects" class="btn btn--outline-cyan">More Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         APPLY NOW
+    ========================== -->
+    <section id="apply" class="section bg--light">
+      <div class="container grid apply-grid">
+        <div>
+          <h2 class="h2">APPLY NOW</h2>
+          <p class="muted">
+            ...And get access to our exclusive platform to submit your projects and collaborate with your team mates
+            and mentors.
+          </p>
+          <a href="#apply-form" class="btn btn--dark btn--lg">Apply</a>
+        </div>
+
+        <div>
+          <img class="img-tile shadow-md" src="/placeholder.svg?height=300&width=400"
+            alt="Application platform interface" />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         WHY PARTICIPATE
+    ========================== -->
+    <section class="section gradient-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="h2 text-on-dark">Why Participate??</h2>
+          <p class="muted text-on-dark maxw-80 center">
+            At the TIC summit, we believe that youths are the biggest assets in the future of technology. We provide a
+            unique and dynamic platform for high school students to showcase their coding skills, tackle real-world
+            challenges, and unleash their innovative potential.
+          </p>
+        </div>
+
+        <div class="grid why-grid">
+          <!-- Item 1 -->
+          <div class="why-item center">
+            <div class="icon-box">
+              <!-- Lightbulb -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2A7 7 0 0 0 12 2z"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="card__title text-on-dark">Strengthen your Tech Skills</h3>
+            <p class="muted text-on-dark">You can develop and learn in-demand tech skills while gaining valuable
+              experience.</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="why-item center">
+            <div class="icon-box">
+              <!-- Users -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 11c1.657 0 3-1.79 3-4s-1.343-4-3-4-3 1.79-3 4 1.343 4 3 4zM8 11c1.657 0 3-1.79 3-4S9.657 3 8 3 5 4.79 5 7s1.343 4 3 4zm0 2c-2.67 0-8 1.336-8 4v2h10v-2c0-1.657.672-3.157 1.757-4.33A10.64 10.64 0 0 0 8 13zm8 0c-.93 0-1.82.1-2.66.29A6.98 6.98 0 0 1 16 19v2h8v-2c0-2.664-5.33-4-8-4z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="card__title text-on-dark">Innovate and Create</h3>
+            <p class="muted text-on-dark">You can develop and learn in-demand tech skills while gaining valuable
+              experience.</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="why-item center">
+            <div class="icon-box">
+              <!-- Network -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18 8a3 3 0 1 0-3-3 3 3 0 0 0 3 3zM6 9a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm12 7a3 3 0 1 0 3 3 3 3 0 0 0-3-3zM6 22a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm1-10h10M5 6l4 3m6-3l4 3M7 19l10-4"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="card__title text-on-dark">Build your network</h3>
+            <p class="muted text-on-dark">Get a chance to connect with industry experts and mentors.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="#apply" class="btn btn--cyan btn--lg">Apply Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         WHAT TO EXPECT
+    ========================== -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="h2 text-on-dark">What to expect</h2>
+        </div>
+
+        <div class="grid expect-grid">
+          <!-- Card A -->
+          <article class="card card--dim">
+            <div class="icon-box mb-16">
+              <!-- Lightbulb -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2A7 7 0 0 0 12 2z"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <p class="muted">
+              You can develop and learn in-demand tech skills while gaining valuable experience.
+            </p>
+          </article>
+
+          <!-- Card B -->
+          <article class="card card--dim">
+            <div class="icon-box mb-16">
+              <!-- Users -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 11c1.657 0 3-1.79 3-4s-1.343-4-3-4-3 1.79-3 4 1.343 4 3 4zM8 11c1.657 0 3-1.79 3-4S9.657 3 8 3 5 4.79 5 7s1.343 4 3 4zm0 2c-2.67 0-8 1.336-8 4v2h10v-2c0-1.657.672-3.157 1.757-4.33A10.64 10.64 0 0 0 8 13zm8 0c-.93 0-1.82.1-2.66.29A6.98 6.98 0 0 1 16 19v2h8v-2c0-2.664-5.33-4-8-4z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <p class="muted">
+              Get to become a problem-solver to the community's most pressing issues leveraging technology.
+            </p>
+          </article>
+
+          <!-- Card C -->
+          <article class="card card--dim">
+            <div class="icon-box mb-16">
+              <!-- Network -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18 8a3 3 0 1 0-3-3 3 3 0 0 0 3 3zM6 9a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm12 7a3 3 0 1 0 3 3 3 3 0 0 0-3-3zM6 22a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm1-10h10M5 6l4 3m6-3l4 3M7 19l10-4"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <p class="muted">Connect with like-minded peers and industry professionals.</p>
+          </article>
+
+          <!-- Card D -->
+          <article class="card card--dim">
+            <div class="icon-box mb-16">
+              <!-- Dollar -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 1v22M17 5c0-1.657-2.239-3-5-3S7 3.343 7 5s2.239 3 5 3 5 1.343 5 3-2.239 3-5 3-5 1.343-5 3 2.239 3 5 3 5-1.343 5-3"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <p class="muted">Win exciting prizes and gain recognition for your innovative solutions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid footer__grid">
+        <!-- TIC Summit Info -->
+        <div>
+          <div class="brand mb-12">
+            <span class="brand__logo">TIC</span>
+            <span class="brand__text">Summit</span>
+          </div>
+          <ul class="list">
+            <li>Donate</li>
+            <li>Become a Partner</li>
+            <li>Become a Volunteer</li>
+            <li>Become a Mentor</li>
+            <li>Other Programs</li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h3 class="footer__title">Useful Links</h3>
+          <ul class="list">
+            <li><a class="muted hover-cyan" href="/">Home</a></li>
+            <li><a class="muted hover-cyan" href="/about">TIC Tech Girls</a></li>
+            <li><a class="muted hover-cyan" href="/about">About</a></li>
+            <li><a class="muted hover-cyan" href="/schedule">Schedule</a></li>
+            <li><a class="muted hover-cyan" href="/hall-of-fame">Past Projects and Events</a></li>
+            <li><a class="muted hover-cyan" href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="footer__title">Contact</h3>
+          <ul class="list">
+            <li>Polytechnic - Yaounde</li>
+            <li>contact@ticsummit.org</li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <div class="brand mb-12">
+            <span class="brand__logo">TIC</span>
+            <span class="brand__text">Summit</span>
+          </div>
+          <div class="socials">
+            <a href="#" class="socials__link" aria-label="Facebook">
+              <!-- Facebook -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="socials__link" aria-label="LinkedIn">
+              <!-- LinkedIn -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM4 8h4v12H4zM14 8a5 5 0 0 1 5 5v7h-4v-7a1 1 0 0 0-2 0v7h-4V8z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="socials__link" aria-label="YouTube">
+              <!-- YouTube -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23 7s-.2-1.4-.8-2a3 3 0 0 0-2.1-.8C17.7 4 12 4 12 4s-5.7 0-8.1.2A3 3 0 0 0 1.8 5c-.6.6-.8 2-.8 2S1 8.7 1 10.4v1.2C1 13.3 1 15 1 15s.2 1.4.8 2a3 3 0 0 0 2.1.8C6.3 18 12 18 12 18s5.7 0 8.1-.2a3 3 0 0 0 2.1-.8c.6-.6.8-2 .8-2s0-1.7 0-3.4V10.4C23 8.7 23 7 23 7zM10 14.5v-5l5 2.5-5 2.5z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="socials__link" aria-label="Email">
+              <!-- Mail -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 4h16a2 2 0 0 1 2 2v1l-10 6L2 7V6a2 2 0 0 1 2-2zm0 5l8 5 8-5v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        <p class="muted center">TIC Summit © 2021 - 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================
+       SCRIPTS (vanilla JS)
+  ========================== -->
+  <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.getAttribute('data-open') === 'true';
+      navLinks.setAttribute('data-open', String(!isOpen));
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Close mobile menu when clicking a link (optional)
+    navLinks.querySelectorAll('a.nav__link, .nav__cta').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.getComputedStyle(navToggle).display !== 'none') {
+          navLinks.setAttribute('data-open', 'false');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Dropdown logic (works for hover on desktop + click on mobile)
+    const scheduleDropdown = document.getElementById('scheduleDropdown');
+    const trigger = scheduleDropdown.querySelector('.dropdown__trigger');
+    const menu = scheduleDropdown.querySelector('.dropdown__menu');
+
+    // Open on hover for desktop
+    scheduleDropdown.addEventListener('mouseenter', () => {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        menu.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+      }
+    });
+    scheduleDropdown.addEventListener('mouseleave', () => {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        menu.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Toggle on click (mobile + fallback)
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = menu.classList.contains('open');
+      menu.classList.toggle('open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      menu.setAttribute('aria-hidden', String(isOpen));
+    });
+
+    // Click outside to close (mobile)
+    document.addEventListener('click', (e) => {
+      if (!scheduleDropdown.contains(e.target) && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+    }, true);
+  </script>
 </body>
 
-<script src="script.js"></script>
-</body>
 </html>

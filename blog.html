@@ -1,22 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiC Foundation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0056b3;
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #004494;
+        }
+
+        section {
+            padding: 2rem;
+            background: white;
+            margin: 1rem auto;
+            max-width: 1100px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #e3f2fd;
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .events,
+        .programs,
+        .stories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
-    <nav id="navbar">
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="stories.html">Success Stories</a>
-    <a href="blog.html">Blog</a>
-    <a href="events.html">Events</a>
-    <a href="volunteer.html">Volunteer</a>
-    <a href="gallery.html">Gallery</a>
-</nav>
-    
-<script src="script.js"></script>
+
+    <header>
+        <h1>TiC Foundation</h1>
+        <p>Inspiring and Empowering the Next Generation of Innovators</p>
+    </header>
+
+    <nav>
+        <a href="#mission">Mission</a>
+        <a href="#events">Events</a>
+        <a href="#programs">Programs</a>
+        <a href="#stories">Stories</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="mission">
+        <h1>Our Mission</h1>
+        <p>To empower youth through innovation, education, and technology, fostering real-world impact and positive
+            change.</p>
+    </section>
+
+    <section id="events">
+        <h2>Past Events</h2>
+        <div class="events">
+            <div class="card">
+                <h3>TiC Summit 2024</h3>
+                <p>A gathering of innovators, entrepreneurs, and change-makers across Africa.</p>
+            </div>
+            <div class="card">
+                <h3>Innovation Bootcamp</h3>
+                <p>Hands-on training for young tech enthusiasts to build impactful solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <h2>Youth Programs</h2>
+        <div class="programs">
+            <div class="card">
+                <h3>Mentorship Program</h3>
+                <p>Connecting young innovators with experienced mentors in various industries.</p>
+            </div>
+            <div class="card">
+                <h3>Startup Incubator</h3>
+                <p>Helping youth-led startups refine their ideas and secure funding.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stories">
+        <h2>Success Stories</h2>
+        <div class="stories">
+            <div class="card">
+                <h3>Jane Doe</h3>
+                <p>From student to startup founder after attending TiC Summit 2023.</p>
+            </div>
+            <div class="card">
+                <h3>John Smith</h3>
+                <p>Won seed funding for his AI-powered education platform.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TiC Foundation. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
 </body>
+
 </html>
