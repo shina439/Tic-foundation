@@ -1,64 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About TiC Foundation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-     <nav id="navbar">
-    <a href="index.html">Home</a>
-    <a href="programs.html">Programs</a>
-    <a href="stories.html">Success Stories</a>
-    <a href="blog.html">Blog</a>
-    <a href="events.html">Events</a>
-    <a href="volunteer.html">Volunteer</a>
-    <a href="gallery.html">Gallery</a>
 
-</nav>
- 
-<article class="blog-post">
-  <header class="post-header">
-    <h1 class="post-title">About TiC Foundation</h1>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="brand">
+        <span class="brand__logo">TIC</span>
+        <span class="brand__text">Foundation</span>
+      </a>
 
-  </header>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+        <!-- Menu icon -->
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
 
-  <section class="post-content">
-    <h2>Overview</h2>
-    <p>
-      The <strong>TiC Foundation</strong> is an organization that leverages technology to develop innovative solutions to everyday problems plaguing African communities.
-    </p>
-    <p>
-      Our mission is to inspire and empower Cameroon’s next generation of tech entrepreneurs, equipping the next generation of innovators with digital and business-related skills necessary for entrepreneurial success.
-    </p>
+      <div class="nav__links" id="navLinks" data-open="false">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/about" class="nav__link">About</a>
 
-    <h2>Our Flagship Projects</h2>
-    <ol>
-      <li><strong>The TiC Startup Accelerator Program (SAP):</strong> An initiative that seeks to accelerate the growth of early-stage tech startups in Cameroon.</li>
-      <li><strong>The TiC Summit:</strong> A tech innovation challenge for young innovators in secondary schools across Cameroon.</li>
-      <li><strong>The TiC Bootcamp:</strong> A training camp that equips young Cameroonians with vital skills necessary to excel in the tech industry.</li>
-    </ol>
-
-    <h2>Company Information</h2>
-    <ul>
-      <li><strong>Website:</strong> <a href="http://www.ticsummit.org" target="_blank">www.ticsummit.org</a></li>
-      <li><strong>Phone:</strong> ‪+237 679364294‬</li>
-      <li><strong>Industry:</strong> Technology, Information and Internet</li>
-      <li><strong>Company Size:</strong> 2 - 10 employees</li>
-      <li><strong>Associated Members:</strong> 45</li>
-      <li><strong>Headquarters:</strong> Yaoundé, Center</li>
-      <li><strong>Type:</strong> Non Profit</li>
-      <li><strong>Founded:</strong> 2020</li>
-    </ul>
-
-    <h2>Specialties</h2>
-    <p>
-      Technology, Innovation, Startups, Entrepreneurship, Marketing and Sales, Project Management, Design Thinking, Problem Solving, Public Speaking, Copywriting
-    </p>
+        <a href="/gallery" class="nav__link">Gallery</a>
+        <a href="/blog" class="nav__link">Blog</a>
+        <a href="/events" class="nav__link">Events</a>
+        <a href="/programs" class="nav__link">Programs</a>
+        <a href="/stories" class="nav__link">Success stories</a>
+        <a href="/volunteer" class="nav__link">Volunteer</a>
+      </div>
+    </div>
+  </nav>
+  <!-- HERO / HEADER -->
+  <section class="hero gradient-hero text-center">
+    <div class="content-wrapper">
+      <h1 class="hero__title hero__title-main">About TiC Foundation</h1>
+      <p class="lead">Empowering the next generation of innovators through technology, entrepreneurship, and education.
+      </p>
+    </div>
   </section>
-</article>
 
-    
+  <!-- MAIN CONTENT -->
+  <main class="content-wrapper section">
+    <article class="blog-post">
+      <section class="post-content">
+        <h2 class="post-title">Overview</h2>
+        <p>The <strong>TiC Foundation</strong> leverages technology to create innovative solutions to everyday
+          challenges in African communities.</p>
+        <p>Our mission is to inspire and equip Cameroon’s next generation of tech entrepreneurs with the digital and
+          business skills they need to succeed.</p>
+
+        <h2 class="post-title">Our Flagship Projects</h2>
+        <ol>
+          <li><strong>The TiC Startup Accelerator Program (SAP):</strong> Accelerates growth of early-stage tech
+            startups in Cameroon.</li>
+          <li><strong>The TiC Summit:</strong> A national tech innovation challenge for young innovators in secondary
+            schools.</li>
+          <li><strong>The TiC Bootcamp:</strong> Training that equips young Cameroonians with vital tech skills.</li>
+        </ol>
+
+        <h2 class="post-title">Company Information</h2>
+        <ul>
+          <li><strong>Website:</strong> <a href="http://www.ticsummit.org" target="_blank">www.ticsummit.org</a></li>
+          <li><strong>Phone:</strong> ‪+237 679364294‬</li>
+          <li><strong>Industry:</strong> Technology, Information & Internet</li>
+          <li><strong>Company Size:</strong> 2 - 10 employees</li>
+          <li><strong>Associated Members:</strong> 45</li>
+          <li><strong>Headquarters:</strong> Yaoundé, Center</li>
+          <li><strong>Type:</strong> Non-Profit</li>
+          <li><strong>Founded:</strong> 2020</li>
+        </ul>
+
+        <h2 class="post-title">Specialties</h2>
+        <p>Technology, Innovation, Startups, Entrepreneurship, Marketing & Sales, Project Management, Design Thinking,
+          Problem Solving, Public Speaking, Copywriting</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="content-wrapper text-center">
+      <p>&copy; 2025 TiC Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.getAttribute('data-open') === 'true';
+      navLinks.setAttribute('data-open', !isOpen);
+    });
+  </script>
+
 </body>
+
 </html>

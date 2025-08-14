@@ -1,21 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Media Gallery | TiC Foundation</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Base styles from the project -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            /* Ensure body fills the viewport and is centered */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg);
+            color: var(--white);
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+    </style>
 </head>
+
 <body>
-    <nav id="navbar">
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="stories.html">Success Stories</a>
-    <a href="blog.html">Blog</a>
-    <a href="events.html">Events</a>
-    <a href="volunteer.html">Volunteer</a>
-    <a href="gallery.html">Gallery</a>
-</nav>
-<script src="script.js"></script>
+    <!-- =========================
+           NAVIGATION
+      ========================== -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="/" class="brand">
+                <span class="brand__logo">TIC</span>
+                <span class="brand__text">Foundation</span>
+            </a>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+                <!-- Menu icon -->
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="nav__links" id="navLinks" data-open="false">
+                <a href="/" class="nav__link">Home</a>
+                <a href="/about" class="nav__link">About</a>
+
+                <a href="/gallery" class="nav__link">Gallery</a>
+                <a href="/blog" class="nav__link">Blog</a>
+                <a href="/events" class="nav__link">Events</a>
+                <a href="/programs" class="nav__link">Programs</a>
+                <a href="/stories" class="nav__link">Success stories</a>
+                <a href="/volunteer" class="nav__link">Volunteer</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Gallery Container -->
+    <main class="gallery-container">
+        <h1 class="h2 text-center text-on-dark" style="margin-bottom: 0;">Media Gallery</h1>
+        <p class="lead maxw-80 center muted text-center" style="margin-top: 0;">Explore snapshots from our past events,
+            hackathons, and community gatherings.</p>
+
+        <!-- Main Image Display with Nav Buttons -->
+        <div class="main-image-display">
+            <img id="main-gallery-image" class="main-image" src="" alt="Main gallery image">
+            <button id="prev-btn" class="gallery-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button id="next-btn" class="gallery-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Thumbnails Grid -->
+        <div class="thumbnails-grid" id="thumbnails-container">
+            <!-- Thumbnails will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Enlarged gallery image">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImage = document.getElementById('main-gallery-image');
+            const thumbnailsContainer = document.getElementById('thumbnails-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            let currentIndex = 0;
+
+            // Sample image data - replace with your actual images
+            const images = [
+                { src: "./assets/finals-BFjccXzU.jpeg", alt: "Photo from Event 1" },
+                { src: "./assets/IMG_2985-Dhpjzfst.jpg", alt: "Hackathon 2024" },
+                { src: "./assets/students.jpg", alt: "Youth Lab session" },
+                { src: "./assets/IMG_2515-C1W9KF2N.jpg", alt: "Mentorship Session" },
+                { src: "https://placehold.co/800x450/1e293b/cbd5e1?text=TiC+Summit+2023", alt: "TiC Summit 2023" },
+                { src: "./assets/GenPic-CncJhhST.jpeg", alt: "TiC Volunteers" }
+            ];
+
+            // Function to update the main image and active thumbnail
+            function updateGallery(index) {
+                mainImage.src = images[index].src;
+                mainImage.alt = images[index].alt;
+
+                // Update active thumbnail class
+                const thumbnails = thumbnailsContainer.querySelectorAll('.thumbnail-item');
+                thumbnails.forEach((thumbnail, i) => {
+                    if (i === index) {
+                        thumbnail.classList.add('active');
+                    } else {
+                        thumbnail.classList.remove('active');
+                    }
+                });
+            }
+
+            // Function to render thumbnails
+            function renderThumbnails() {
+                thumbnailsContainer.innerHTML = ''; // Clear existing thumbnails
+                images.forEach((image, index) => {
+                    const thumbnailItem = document.createElement('div');
+                    thumbnailItem.classList.add('thumbnail-item');
+                    thumbnailItem.innerHTML = `<img src="${image.src}" alt="${image.alt}">`;
+                    thumbnailItem.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateGallery(currentIndex);
+                    });
+                    thumbnailsContainer.appendChild(thumbnailItem);
+                });
+            }
+
+            // Event listeners for navigation buttons
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateGallery(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                updateGallery(currentIndex);
+            });
+
+            // Event listener for opening the lightbox
+            mainImage.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImage.src = mainImage.src;
+                lightboxImage.alt = mainImage.alt;
+            });
+
+            // Event listener for closing the lightbox
+            closeBtn.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+
+            // Close the lightbox when the user clicks outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target.id === 'lightbox-modal') {
+                    lightbox.style.display = 'none';
+                }
+            });
+
+            // Initial render
+            renderThumbnails();
+            updateGallery(currentIndex);
+        });
+    </script>
 </body>
+
 </html>

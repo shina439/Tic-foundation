@@ -1,22 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiC Foundation</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <nav id="navbar">
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="stories.html">Success Stories</a>
-    <a href="blog.html">Blog</a>
-    <a href="events.html">Events</a>
-    <a href="volunteer.html">Volunteer</a>
-    <a href="gallery.html">Gallery</a>
-</nav>
-    
-<script src="script.js"></script>
+
+    <!-- =========================
+           NAVIGATION
+      ========================== -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="/" class="brand">
+                <span class="brand__logo">TIC</span>
+                <span class="brand__text">Foundation</span>
+            </a>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+                <!-- Menu icon -->
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="nav__links" id="navLinks" data-open="false">
+                <a href="/" class="nav__link">Home</a>
+                <a href="/about" class="nav__link">About</a>
+
+                <a href="/gallery" class="nav__link">Gallery</a>
+                <a href="/blog" class="nav__link">Blog</a>
+                <a href="/events" class="nav__link">Events</a>
+                <a href="/programs" class="nav__link">Programs</a>
+                <a href="/stories" class="nav__link">Success stories</a>
+                <a href="/volunteer" class="nav__link">Volunteer</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / MISSION -->
+    <section class="hero gradient-hero text-center" id="mission">
+        <div class="content-wrapper">
+            <h1 class="hero__title hero__title-main">Our Mission</h1>
+            <p class="lead">To empower youth through innovation, education, and technology, fostering real-world impact
+                and positive change.</p>
+        </div>
+    </section>
+
+    <!-- PAST EVENTS -->
+    <section class="section content-wrapper" id="events">
+        <h2 class="post-title text-center">Past Events</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+            <div class="card">
+                <h3 class="card__title">TiC Summit 2024</h3>
+                <p>A gathering of innovators, entrepreneurs, and change-makers across Africa.</p>
+            </div>
+            <div class="card">
+                <h3 class="card__title">Innovation Bootcamp</h3>
+                <p>Hands-on training for young tech enthusiasts to build impactful solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="section content-wrapper" id="programs">
+        <h2 class="post-title text-center">Youth Programs</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+            <div class="card">
+                <h3 class="card__title">Mentorship Program</h3>
+                <p>Connecting young innovators with experienced mentors in various industries.</p>
+            </div>
+            <div class="card">
+                <h3 class="card__title">Startup Incubator</h3>
+                <p>Helping youth-led startups refine their ideas and secure funding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="content-wrapper text-center">
+            <p>&copy; 2025 TiC Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
 </body>
+
 </html>
