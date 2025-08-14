@@ -123,6 +123,10 @@ h3 {
   color: var(--white);
 }
 
+.bg-main {
+  background-color: #0f172a;
+}
+
 /* Gradients */
 .gradient-hero {
   background: radial-gradient(
@@ -205,7 +209,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 10px;
   font-weight: 700;
   border: 1px solid transparent;
@@ -213,7 +217,7 @@ h3 {
   transition: 0.2s ease;
 }
 .btn--lg {
-  padding: 0.875rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   font-size: 1.0625rem;
 }
 .btn--primary {
@@ -234,6 +238,7 @@ h3 {
   background: transparent;
   border-color: var(--cyan);
   color: var(--cyan);
+  margin-top: 18px;
 }
 .btn--outline-cyan:hover {
   background: var(--cyan);
@@ -339,33 +344,6 @@ h3 {
 .nav__cta {
   margin-top: 0.25rem;
 }
-.dropdown {
-  position: relative;
-}
-.dropdown__menu {
-  position: static;
-  background: #1f2937;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  margin: 0.25rem 0;
-  padding: 0.35rem;
-  display: none;
-}
-.dropdown__menu.open {
-  display: block;
-}
-.dropdown__item {
-  display: block;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  color: #cbd5e1;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.dropdown__item:hover {
-  color: var(--cyan);
-  background: #0b1220;
-}
 
 /* Desktop nav */
 @media (min-width: 768px) {
@@ -406,7 +384,10 @@ h3 {
 
 /* HERO */
 .hero {
-  padding-top: 5.5rem;
+  padding-top: 15rem;
+  height: 84vh;
+  display: flex;
+  align-items: center;
 }
 .hero__title {
   font-size: 2.25rem;
@@ -649,10 +630,6 @@ body {
   margin-left: 1.5rem;
 }
 
-.post-content strong {
-  color: #fbbf24;
-}
-
 /* Footer */
 footer {
   background: #1e293b;
@@ -662,4 +639,138 @@ footer {
   font-size: 0.9rem;
   color: #94a3b8;
   border-top: 1px solid #334155;
+}
+
+/* Gallery styles */
+.gallery-container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-image-display {
+  position: relative;
+  background-color: var(--bg-800);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.main-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  /* Maintain a consistent aspect ratio */
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border-radius: 8px;
+}
+
+.gallery-nav-btn:hover {
+  opacity: 1;
+}
+
+.gallery-nav-btn.prev {
+  left: 1rem;
+}
+
+.gallery-nav-btn.next {
+  right: 1rem;
+}
+
+.thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.thumbnail-item {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail-item.active {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan);
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100px;
+  /* Fixed height for consistent thumbnails */
+  object-fit: cover;
+  display: block;
+}
+
+/* Lightbox modal styles */
+#lightbox-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+#lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: var(--white);
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: var(--cyan);
+  text-decoration: none;
+  cursor: pointer;
 }

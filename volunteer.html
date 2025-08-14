@@ -4,25 +4,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Volunteer | TiC Foundation</title>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for the form and card */
+        .form-card {
+            background-color: var(--bg-800);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-mid);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg);
+            border: 1px solid var(--bg-700);
+            color: var(--white);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--green);
+            display: none;
+            /* Hidden by default */
+        }
+    </style>
 </head>
 
-<body>
-    <nav id="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="programs.html">Programs</a>
-        <a href="stories.html">Success Stories</a>
-        <a href="blog.html">Blog</a>
-        <a href="events.html">Events</a>
-        <a href="volunteer.html">Volunteer</a>
-        <a href="gallery.html">Gallery</a>
+<body class="section--dark">
+    <!-- =========================
+           NAVIGATION
+      ========================== -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="/" class="brand">
+                <span class="brand__logo">TIC</span>
+                <span class="brand__text">Foundation</span>
+            </a>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+                <!-- Menu icon -->
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="nav__links" id="navLinks" data-open="false">
+                <a href="/" class="nav__link">Home</a>
+                <a href="/about" class="nav__link">About</a>
+
+                <a href="/gallery" class="nav__link">Gallery</a>
+                <a href="/blog" class="nav__link">Blog</a>
+                <a href="/events" class="nav__link">Events</a>
+                <a href="/programs" class="nav__link">Programs</a>
+                <a href="/stories" class="nav__link">Success stories</a>
+                <a href="/volunteer" class="nav__link">Volunteer</a>
+            </div>
+        </div>
     </nav>
-    <script src="script.js"></script>
-    <footer>
-        <p>&copy; 2025 TiC Foundation. All rights reserved.</p>
-    </footer>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section--dark">
+            <div class="container hero">
+                <div class="hero__content">
+                    <h1 class="hero__title hero__title-main">Join Our Volunteer Team</h1>
+                    <p class="lead maxw-80 muted">
+                        Become a part of the TiC Foundation and help us empower the next generation of tech leaders and
+                        innovators.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Form Section -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="form-card" id="volunteer-form-container">
+                    <h2 class="h2 text-center text-on-dark" style="margin-bottom: 2rem;">Volunteer Application Form</h2>
+                    <form id="volunteer-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="interests">Areas of Interest</label>
+                            <textarea id="interests" name="interests"
+                                placeholder="e.g., Mentorship, Event Coordination, Marketing, etc." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Relevant Experience</label>
+                            <textarea id="experience" name="experience"
+                                placeholder="Tell us about any relevant skills or past volunteer work."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary submit-btn">Submit Application</button>
+                    </form>
+                    <p id="thank-you-message">Thank you for your interest! We've received your application and will be
+                        in touch soon.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript for the mobile navigation toggle
+        document.querySelector('.nav__toggle').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav__links');
+            const isOpen = navLinks.getAttribute('data-open') === 'true';
+            navLinks.setAttribute('data-open', !isOpen);
+        });
+
+        // JavaScript for form submission handling
+        document.getElementById('volunteer-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Hide the form and show the thank you message
+            document.getElementById('volunteer-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+
+            // You would typically send the form data to a server here using fetch()
+            // Example:
+            /*
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            console.log(data);
+            fetch('/your-api-endpoint', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+            */
+        });
+    </script>
 </body>
 
 </html>
