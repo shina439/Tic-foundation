@@ -385,7 +385,6 @@ h3 {
 /* HERO */
 .hero {
   padding-top: 15rem;
-  height: 84vh;
   display: flex;
   align-items: center;
 }
